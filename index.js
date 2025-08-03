@@ -399,22 +399,6 @@ async function showOrderSummary(ctx) {
 
 // ... تابع بنفس نظام الأكشنز لباقي الأكواد!
 
-// const PORT = process.env.PORT || 3000;
-// // app.listen(PORT, () => console.log(`Server running on ${PORT}`));
-// bot.launch().then(() => console.log('Telegram bot started')).catch((e) => console.error('Bot launch failed', e));
-
-
-
-
-let isBotLaunched = false;
-if (!isBotLaunched) {
-  bot.launch()
-    .then(() => {
-      isBotLaunched = true;
-      console.log('🚀 Telegram bot launched');
-    })
-    .catch(err => console.error('❌ Bot launch error', err));
-}
-
-// Required for Vercel
-export default app;
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
+bot.launch().then(() => console.log('Telegram bot started')).catch((e) => console.error('Bot launch failed', e));
